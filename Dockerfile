@@ -1,15 +1,14 @@
-# Step 2: Package the application into a Docker image
-# Use an official OpenJDK runtime as the base image
-FROM openjdk:17-jdk-slim
+# Spring Boot 실행용 JDK 이미지 (공식 권장)
+FROM eclipse-temurin:17-jdk-jammy
 
-# Set the working directory
+# 작업 디렉터리
 WORKDIR /app
 
-# Copy the jar file from the build stage
+# 빌드된 jar 복사
 COPY build/libs/*.jar app.jar
 
-# Expose the port the application runs on
+# 애플리케이션 포트
 EXPOSE 8080
 
-# Define the command to run the application
+# 컨테이너 실행 명령
 ENTRYPOINT ["java", "-jar", "app.jar"]
