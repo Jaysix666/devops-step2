@@ -76,3 +76,12 @@ jobs:
           docker stop devops_step2 || true
           docker rm devops_step2 || true
           docker run -d --name devops_step2 -p 8080:8080 ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
+
+      - name: docker image pull
+        run: docker pull ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
+
+      - name: docker compose 실행
+        run: cd /home/kosa/devops_step2
+
+      - name: docker compose 실행
+        run: docker compose -f docker-compose_nginx.yml up
