@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Jaysix666/devops-step2",
+  "pipelineDirectory": "devops-step2",
+  "workspaceDirectory": "devops-step2\\devops-step2",
+  "repositories": {
+    "Jaysix666/devops-step2": {
+      "repositoryPath": "devops-step2\\devops-step2",
+      "lastRunOn": "12/18/2025 16:11:40 +09:00"
+    }
+  },
+  "lastRunOn": "12/18/2025 16:11:40 +09:00"
+}

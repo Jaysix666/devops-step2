@@ -1,0 +1,2159 @@
+[2025-12-18 07:11:38Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-12-18 07:11:38Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:38Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:38Z INFO HostContext] Well known config file 'Credentials': 'C:\devops_step2\actions-runner\.credentials'
+[2025-12-18 07:11:39Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:39Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:39Z INFO HostContext] Well known config file 'Runner': 'C:\devops_step2\actions-runner\.runner'
+[2025-12-18 07:11:39Z INFO Worker] Version: 2.329.0
+[2025-12-18 07:11:39Z INFO Worker] Commit: c76c59996c8fa32e989164a5a695efb12608ae5a
+[2025-12-18 07:11:39Z INFO Worker] Culture: ko-KR
+[2025-12-18 07:11:39Z INFO Worker] UI Culture: ko-KR
+[2025-12-18 07:11:39Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-12-18 07:11:39Z INFO ProcessChannel] Receiving message of length 19641, with hash '69ee08dea4505016a9475d0a9ecff3744da2303cc41f834bd027dc38e00de53f'
+[2025-12-18 07:11:39Z INFO Worker] Message received.
+[2025-12-18 07:11:40Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/main.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "docker/login-action",
+        "ref": "v2",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 59,
+        "col": 15,
+        "lit": "Docker login"
+      },
+      "contextName": "__docker_login-action",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 62,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 62,
+              "col": 11,
+              "lit": "username"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 62,
+              "col": 21,
+              "lit": "yangjay666"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 63,
+              "col": 11,
+              "lit": "password"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 63,
+              "col": 21,
+              "expr": "secrets.DOCKER_PASSWORD"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "a8c0cbb3-9eb5-41cf-aa76-808f9d18498d",
+      "name": "__docker_login-action"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 66,
+        "col": 15,
+        "lit": "Docker image pull"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 67,
+              "col": 14,
+              "lit": "docker pull yangjay666/devops_step2:v1.0"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "efc9a015-9f1a-4424-b0a8-01004a49b38c",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 70,
+        "col": 15,
+        "lit": "Docker container run"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 71,
+              "col": 14,
+              "lit": "docker stop devops_step2 || true\ndocker rm devops_step2 || true\ndocker run -d --name devops_step2 -p 8080:8080 yangjay666/devops_step2:v1.0\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "05b6d6e5-a015-494e-806c-73719557cbf1",
+      "name": "__run_2"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DOCKER_PASSWORD": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "776acf46-21da-4ac9-a8c5-2530906437f2.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "Deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "776acf46-21da-4ac9-a8c5-2530906437f2",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "776acf46-21da-4ac9-a8c5-2530906437f2",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "d0837cab-3cbd-5a67-9df0-b4be9ba12ea3",
+  "jobDisplayName": "Deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/2TZKQrKGL39f22X3dZcwNWe2cQdA7FVmqfJdxdcesjTGGnYu91/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus22.actions.githubusercontent.com/2TZKQrKGL39f22X3dZcwNWe2cQdA7FVmqfJdxdcesjTGGnYu91/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-3-azure-eastus.actions.githubusercontent.com/176/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "22a098f6c383221a6476c753ef6703bab6bc1f7f"
+        },
+        {
+          "k": "repository",
+          "v": "Jaysix666/devops-step2"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Jaysix666"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "217545804"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Jaysix666/devops-step2.git"
+        },
+        {
+          "k": "run_id",
+          "v": "20328644248"
+        },
+        {
+          "k": "run_number",
+          "v": "3"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "217545804"
+        },
+        {
+          "k": "actor",
+          "v": "Jaysix666"
+        },
+        {
+          "k": "workflow",
+          "v": "Spring boot docker image CI/CD"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "22a098f6c383221a6476c753ef6703bab6bc1f7f"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "86484bad9154726deb39e165f4e007f81aeeee4a"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "yhk4968@naver.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Jaysix666"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Jaysix666"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "yhk4968@naver.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Jaysix666"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Jaysix666"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "22a098f6c383221a6476c753ef6703bab6bc1f7f"
+                        },
+                        {
+                          "k": "message",
+                          "v": "test1"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-12-18T15:51:22+09:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "449c6c74fbb6db6a44e1ae8d8205be8e15f4bad9"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/Jaysix666/devops-step2/commit/22a098f6c383221a6476c753ef6703bab6bc1f7f"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/Jaysix666/devops-step2/compare/86484bad9154...22a098f6c383"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "yhk4968@naver.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Jaysix666"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Jaysix666"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "yhk4968@naver.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Jaysix666"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Jaysix666"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "22a098f6c383221a6476c753ef6703bab6bc1f7f"
+                    },
+                    {
+                      "k": "message",
+                      "v": "test1"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-12-18T15:51:22+09:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "449c6c74fbb6db6a44e1ae8d8205be8e15f4bad9"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/Jaysix666/devops-step2/commit/22a098f6c383221a6476c753ef6703bab6bc1f7f"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "yhk4968@naver.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "Jaysix666"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Jaysix666/devops-step2.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1766037183.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Jaysix666/devops-step2"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Jaysix666/devops-step2.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Jaysix666/devops-step2"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1118679280.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Java"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "devops-step2"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOQq2w8A"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/217545804?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "yhk4968@naver.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Jaysix666/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Jaysix666/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Jaysix666/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Jaysix666/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Jaysix666"
+                          },
+                          {
+                            "k": "id",
+                            "v": 217545804.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "Jaysix666"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Jaysix666"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDODPd8TA"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Jaysix666/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Jaysix666/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Jaysix666/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Jaysix666/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Jaysix666/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Jaysix666"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1766040759.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Jaysix666/devops-step2.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Jaysix666/devops-step2"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-12-18T06:47:35Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Jaysix666/devops-step2"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/217545804?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Jaysix666/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Jaysix666/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Jaysix666/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Jaysix666/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Jaysix666"
+                    },
+                    {
+                      "k": "id",
+                      "v": 217545804.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "Jaysix666"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDODPd8TA"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Jaysix666/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Jaysix666/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Jaysix666/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Jaysix666/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Jaysix666/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Jaysix666"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Jaysix666/devops-step2/.github/workflows/main.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "22a098f6c383221a6476c753ef6703bab6bc1f7f"
+        },
+        {
+          "k": "repository_id",
+          "v": "1118679280"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Jaysix666"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 58398931473.0
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2,
+      "d": [
+        {
+          "k": "build",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "result",
+                "v": "success"
+              },
+              {
+                "k": "outputs",
+                "v": {
+                  "t": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDODPd8TA"
+}
+[2025-12-18 07:11:40Z INFO JobRunner] Job ID d0837cab-3cbd-5a67-9df0-b4be9ba12ea3
+[2025-12-18 07:11:40Z INFO ConfigurationStore] currentAssemblyLocation: C:\devops_step2\actions-runner\bin\Runner.Worker.dll
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] binPath: C:\devops_step2\actions-runner\bin
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] RootFolder: C:\devops_step2\actions-runner
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'Runner': 'C:\devops_step2\actions-runner\.runner'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] ConfigFilePath: C:\devops_step2\actions-runner\.runner
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\devops_step2\actions-runner\.runner_migrated'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] MigratedConfigFilePath: C:\devops_step2\actions-runner\.runner_migrated
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'Credentials': 'C:\devops_step2\actions-runner\.credentials'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] CredFilePath: C:\devops_step2\actions-runner\.credentials
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\devops_step2\actions-runner\.credentials_migrated'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] MigratedCredFilePath: C:\devops_step2\actions-runner\.credentials_migrated
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'Service': 'C:\devops_step2\actions-runner\.service'
+[2025-12-18 07:11:40Z INFO ConfigurationStore] ServiceConfigFilePath: C:\devops_step2\actions-runner\.service
+[2025-12-18 07:11:40Z INFO ConfigurationStore] Read setting file: 401 chars
+[2025-12-18 07:11:40Z INFO JobRunner] Initializing launch client
+[2025-12-18 07:11:40Z INFO JobServerQueue] Initializing results client
+[2025-12-18 07:11:40Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-12-18 07:11:40Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-12-18 07:11:40Z INFO JobServerQueue] Start process web console line queue.
+[2025-12-18 07:11:40Z INFO JobServerQueue] Start process file upload queue.
+[2025-12-18 07:11:40Z INFO JobServerQueue] Start results file upload queue.
+[2025-12-18 07:11:40Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-12-18 07:11:40Z INFO JobServerQueue] Start process timeline update queue.
+[2025-12-18 07:11:40Z INFO ExecutionContext] Initializing Job context
+[2025-12-18 07:11:40Z INFO ExecutionContext] Initialize GitHub context
+[2025-12-18 07:11:40Z INFO ExecutionContext] Initialize Env context
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:40Z INFO JobRunner] Starting the job execution context.
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO JobRunner] Validating directory permissions for: 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Tools': 'C:\devops_step2\actions-runner\_work\_tool'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Temp': 'C:\devops_step2\actions-runner\_work\_temp'
+[2025-12-18 07:11:40Z INFO JobRunner] Getting job extension.
+[2025-12-18 07:11:40Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'Credentials': 'C:\devops_step2\actions-runner\.credentials'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known config file 'SetupInfo': 'C:\devops_step2\actions-runner\.setup_info'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\devops_step2\actions-runner\_work\_PipelineMapping\Jaysix666/devops-step2\PipelineFolder.json
+[2025-12-18 07:11:40Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO JobExtension] Downloading actions
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:40Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:41Z INFO ResultServer] Successfully started websocket client.
+[2025-12-18 07:11:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9b8f232d-ddb2-47e2-b0bf-33260634d494', success rate: 1/1.
+[2025-12-18 07:11:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9b8f232d-ddb2-47e2-b0bf-33260634d494', success rate: 1/1.
+[2025-12-18 07:11:41Z INFO Worker] Listening for cancel message from the channel.
+[2025-12-18 07:11:41Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-12-18 07:11:42Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:42Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:42Z INFO ActionManager] Save archive 'https://api.github.com/repos/docker/login-action/zipball/465a07811f14bebb1938fbed4728c6a1ff8901fc' into C:\devops_step2\actions-runner\_work\_actions\_temp_3e5090fc-f313-4a30-b98f-f4f26fdbd814\0147c691-e780-47a0-afb7-02d6c511abee.zip.
+[2025-12-18 07:11:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9b8f232d-ddb2-47e2-b0bf-33260634d494', success rate: 1/1.
+[2025-12-18 07:11:43Z INFO ActionManager] Request URL: https://api.github.com/repos/docker/login-action/zipball/465a07811f14bebb1938fbed4728c6a1ff8901fc X-GitHub-Request-Id: ECE9:17E080:8DC0:46DB2:6943A92E Http Status: OK
+[2025-12-18 07:11:43Z INFO ActionManager] Finished getting action repository.
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:43Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:43Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property author.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property branding.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-18 07:11:44Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:44Z INFO ActionManager] Load action that reference repository from 'C:\devops_step2\actions-runner\_work\_actions\docker\login-action\v2'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property author.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property branding.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-18 07:11:44Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-18 07:11:44Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-18 07:11:44Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-18 07:11:44Z INFO JobExtension] Adding .
+[2025-12-18 07:11:44Z INFO JobExtension] Adding .
+[2025-12-18 07:11:44Z INFO JobExtension] Adding .
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO JobExtension] Total accessible running process: 302.
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO JobExtension] Start checking service connectivity in background.
+[2025-12-18 07:11:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9b8f232d-ddb2-47e2-b0bf-33260634d494', success rate: 1/1.
+[2025-12-18 07:11:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "9b8f232d-ddb2-47e2-b0bf-33260634d494",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2025-12-18T07:11:40.4018351Z",
+  "finishTime": "2025-12-18T07:11:44.2357715Z"
+}.
+[2025-12-18 07:11:44Z INFO JobRunner] Total job steps: 3.
+[2025-12-18 07:11:44Z INFO JobRunner] Run all job steps.
+[2025-12-18 07:11:44Z INFO StepsRunner] Processing step: DisplayName='Docker login'
+[2025-12-18 07:11:44Z INFO StepsRunner] Evaluating: success()
+[2025-12-18 07:11:44Z INFO StepsRunner] Result: true
+[2025-12-18 07:11:44Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-18 07:11:44Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\devops_step2\actions-runner\_diag\blocks\776acf46-21da-4ac9-a8c5-2530906437f2_9b8f232d-ddb2-47e2-b0bf-33260634d494.1
+[2025-12-18 07:11:44Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-12-18 07:11:44Z INFO StepsRunner] Starting the step.
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-18 07:11:44Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Working directory: 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] Process started with process id 21428, waiting for process exit.
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] Finished process 21428 with exit code 0, and elapsed time 00:00:00.1692043.
+[2025-12-18 07:11:44Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:44Z INFO ActionManager] Load action that reference repository from 'C:\devops_step2\actions-runner\_work\_actions\docker\login-action\v2'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property author.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Ignore action property branding.
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-18 07:11:44Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-18 07:11:44Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-18 07:11:44Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-18 07:11:44Z INFO ExecutionContext] Reserve record order 5 to 8 for post job actions.
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Temp': 'C:\devops_step2\actions-runner\_work\_temp'
+[2025-12-18 07:11:44Z INFO ExecutionContext] Write event payload to C:\devops_step2\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Temp': 'C:\devops_step2\actions-runner\_work\_temp'
+[2025-12-18 07:11:44Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Input 'registry': default value evaluate result: ""
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2025-12-18 07:11:44Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-18 07:11:44Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-18 07:11:44Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:44Z INFO HostContext] Well known directory 'Externals': 'C:\devops_step2\actions-runner\externals'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   File name: 'C:\devops_step2\actions-runner\externals\node20\bin\node.exe'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Arguments: '"C:\devops_step2\actions-runner\_work\_actions\docker\login-action\v2\dist/index.js"'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Working directory: 'C:\devops_step2\actions-runner\_work\devops-step2\devops-step2'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-18 07:11:44Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-18 07:11:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a8c0cbb3-9eb5-41cf-aa76-808f9d18498d', success rate: 1/1.
+[2025-12-18 07:11:45Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-12-18 07:11:47Z INFO ProcessInvokerWrapper] Process started with process id 17836, waiting for process exit.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a8c0cbb3-9eb5-41cf-aa76-808f9d18498d', success rate: 1/1.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Finished process 17836 with exit code 1, and elapsed time 00:00:04.5313510.
+[2025-12-18 07:11:49Z INFO CreateStepSummaryCommand] Step Summary file (C:\devops_step2\actions-runner\_work\_temp\_runner_file_commands\step_summary_aeeb20a5-93cb-47cf-a11f-a920a502b9fe) is empty; skipping attachment upload
+[2025-12-18 07:11:49Z INFO StepsRunner] Step result: Failed
+[2025-12-18 07:11:49Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v2",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "a8c0cbb3-9eb5-41cf-aa76-808f9d18498d",
+  "stepContextName": "__docker_login-action",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "failed",
+  "errorMessages": [
+    "Unable to locate executable file: docker. Please verify either the file path exists or the file can be found within a directory specified by the PATH environment variable. Also verify the file has a valid extension for an executable file."
+  ],
+  "executionTimeInSeconds": 5,
+  "startTime": "2025-12-18T07:11:44.2880094Z",
+  "finishTime": "2025-12-18T07:11:49.214207Z"
+}.
+[2025-12-18 07:11:49Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-12-18 07:11:49Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-18 07:11:49Z INFO StepsRunner] Processing step: DisplayName='Docker image pull'
+[2025-12-18 07:11:49Z INFO StepsRunner] Evaluating: success()
+[2025-12-18 07:11:49Z INFO StepsRunner] Result: false
+[2025-12-18 07:11:49Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-18 07:11:49Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-18 07:11:49Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-18 07:11:49Z INFO StepsRunner] Processing step: DisplayName='Docker container run'
+[2025-12-18 07:11:49Z INFO StepsRunner] Evaluating: success()
+[2025-12-18 07:11:49Z INFO StepsRunner] Result: false
+[2025-12-18 07:11:49Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-18 07:11:49Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-18 07:11:49Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-18 07:11:49Z INFO StepsRunner] Processing step: DisplayName='Post Docker login'
+[2025-12-18 07:11:49Z INFO StepsRunner] Evaluating: always()
+[2025-12-18 07:11:49Z INFO StepsRunner] Result: true
+[2025-12-18 07:11:49Z INFO StepsRunner] Starting the step.
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-18 07:11:49Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Working directory: 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Process started with process id 12764, waiting for process exit.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Finished process 12764 with exit code 0, and elapsed time 00:00:00.0730490.
+[2025-12-18 07:11:49Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:49Z INFO ActionManager] Load action that reference repository from 'C:\devops_step2\actions-runner\_work\_actions\docker\login-action\v2'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Actions': 'C:\devops_step2\actions-runner\_work\_actions'
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Ignore action property author.
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Ignore action property branding.
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Docker Login",
+  "description": "GitHub Action to login against a Docker registry",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 10,
+          "col": 3,
+          "lit": "registry"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 13,
+          "col": 3,
+          "lit": "username"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 16,
+          "col": 3,
+          "lit": "password"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 19,
+          "col": 3,
+          "lit": "ecr"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 21,
+          "col": 14,
+          "lit": "auto"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 23,
+          "col": 3,
+          "lit": "logout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 14,
+          "lit": "true"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-18 07:11:49Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-18 07:11:49Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-18 07:11:49Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Temp': 'C:\devops_step2\actions-runner\_work\_temp'
+[2025-12-18 07:11:49Z INFO ExecutionContext] Write event payload to C:\devops_step2\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Work': 'C:\devops_step2\actions-runner\_work'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Temp': 'C:\devops_step2\actions-runner\_work\_temp'
+[2025-12-18 07:11:49Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Input 'registry': default value evaluate result: ""
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Input 'ecr': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 21,
+  "col": 14,
+  "lit": "auto"
+}
+[2025-12-18 07:11:49Z INFO ActionManifestManager] Input 'logout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 25,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-18 07:11:49Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-18 07:11:49Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:49Z INFO HostContext] Well known directory 'Externals': 'C:\devops_step2\actions-runner\externals'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   File name: 'C:\devops_step2\actions-runner\externals\node20\bin\node.exe'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Arguments: '"C:\devops_step2\actions-runner\_work\_actions\docker\login-action\v2\dist/index.js"'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Working directory: 'C:\devops_step2\actions-runner\_work\devops-step2\devops-step2'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-18 07:11:49Z INFO ProcessInvokerWrapper] Process started with process id 20732, waiting for process exit.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'a8c0cbb3-9eb5-41cf-aa76-808f9d18498d', success rate: 1/1.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record '87ff3122-b4e5-47af-bd6b-4da075a45223', success rate: 1/1.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-18 07:11:49Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\devops_step2\actions-runner\_diag\blocks\776acf46-21da-4ac9-a8c5-2530906437f2_a8c0cbb3-9eb5-41cf-aa76-808f9d18498d.1
+[2025-12-18 07:11:50Z INFO JobServerQueue] Try to append 1 batches web console lines for record '87ff3122-b4e5-47af-bd6b-4da075a45223', success rate: 1/1.
+[2025-12-18 07:11:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:50Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-18 07:11:50Z INFO ProcessInvokerWrapper] Finished process 20732 with exit code 1, and elapsed time 00:00:01.3695572.
+[2025-12-18 07:11:50Z INFO CreateStepSummaryCommand] Step Summary file (C:\devops_step2\actions-runner\_work\_temp\_runner_file_commands\step_summary_01f1efa7-de75-49fd-9471-3dbbfcbdf137) is empty; skipping attachment upload
+[2025-12-18 07:11:50Z INFO StepsRunner] Step result: Failed
+[2025-12-18 07:11:50Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "docker/login-action",
+  "ref": "v2",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "87ff3122-b4e5-47af-bd6b-4da075a45223",
+  "result": "failed",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-12-18T07:11:49.2299987Z",
+  "finishTime": "2025-12-18T07:11:50.7212483Z"
+}.
+[2025-12-18 07:11:50Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-12-18 07:11:50Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-18 07:11:50Z INFO JobRunner] Finalize job.
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:50Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:50Z INFO JobExtension] Initialize Env context
+[2025-12-18 07:11:50Z INFO JobExtension] Initialize steps context
+[2025-12-18 07:11:50Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-12-18 07:11:50Z INFO JobExtension] Total accessible running process: 302.
+[2025-12-18 07:11:50Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "bb9b3dac-d1f4-4eb5-9cf2-07fa091b8e41",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-12-18T07:11:50.7348758Z",
+  "finishTime": "2025-12-18T07:11:50.7640625Z"
+}.
+[2025-12-18 07:11:50Z INFO JobRunner] Job result after all job steps finish: Failed
+[2025-12-18 07:11:50Z INFO JobRunner] Completing the job execution context.
+[2025-12-18 07:11:50Z INFO JobRunner] Shutting down the job server queue.
+[2025-12-18 07:11:50Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-12-18 07:11:51Z INFO JobServerQueue] All queue process task stopped.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '87ff3122-b4e5-47af-bd6b-4da075a45223', success rate: 1/1.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'bb9b3dac-d1f4-4eb5-9cf2-07fa091b8e41', success rate: 1/1.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Web console line queue drained.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2025-12-18 07:11:51Z INFO JobServerQueue] File upload queue drained.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-12-18 07:11:51Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-18 07:11:51Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\devops_step2\actions-runner\_diag\blocks\776acf46-21da-4ac9-a8c5-2530906437f2_87ff3122-b4e5-47af-bd6b-4da075a45223.1
+[2025-12-18 07:11:52Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-18 07:11:52Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\devops_step2\actions-runner\_diag\blocks\776acf46-21da-4ac9-a8c5-2530906437f2_bb9b3dac-d1f4-4eb5-9cf2-07fa091b8e41.1
+[2025-12-18 07:11:53Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-12-18 07:11:53Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\devops_step2\actions-runner\_diag\blocks\776acf46-21da-4ac9-a8c5-2530906437f2_d0837cab-3cbd-5a67-9df0-b4be9ba12ea3.1
+[2025-12-18 07:11:53Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2025-12-18 07:11:53Z INFO JobServerQueue] Results upload queue drained.
+[2025-12-18 07:11:54Z INFO JobServerQueue] Timeline update queue drained.
+[2025-12-18 07:11:54Z INFO JobServerQueue] Disposing job server ...
+[2025-12-18 07:11:54Z INFO JobServerQueue] Disposing results server ...
+[2025-12-18 07:11:54Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-12-18 07:11:54Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\devops_step2\actions-runner\_work\_temp
+[2025-12-18 07:11:54Z INFO HostContext] Well known directory 'Bin': 'C:\devops_step2\actions-runner\bin'
+[2025-12-18 07:11:54Z INFO HostContext] Well known directory 'Root': 'C:\devops_step2\actions-runner'
+[2025-12-18 07:11:54Z INFO HostContext] Well known directory 'Diag': 'C:\devops_step2\actions-runner\_diag'
+[2025-12-18 07:11:54Z INFO HostContext] Well known config file 'Telemetry': 'C:\devops_step2\actions-runner\_diag\.telemetry'
+[2025-12-18 07:11:54Z INFO JobRunner] Raising job completed against run service
+[2025-12-18 07:11:54Z INFO Worker] Job completed.
