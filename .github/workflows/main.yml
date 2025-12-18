@@ -15,7 +15,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v3
 
-      # JDK 17 설정
+      # JDK 17 설정 (CI 서버용)
       - name: Setup JDK 17
         uses: actions/setup-java@v3
         with:
@@ -30,7 +30,7 @@ jobs:
       - name: Test with gradle
         run: ./gradlew --info test
 
-      # Spring Boot 실행 파일 생성
+      # Spring Boot jar 생성
       - name: Spring boot 실행 파일 생성
         run: ./gradlew bootJar
 
@@ -65,3 +65,10 @@ jobs:
       # Docker 이미지 pull
       - name: Docker image pull
         run: docker pull yangjay666/devops_step2:v1.0
+
+      # (선택) 컨테이너 실행
+      - name: Docker container run
+        run: |
+          docker stop devops_step2 || true
+          docker rm devops_step2 || true
+          docker run -d --name devops_step2 -p 8080:8080 yangjay666/devops_step2:v1.0
