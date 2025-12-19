@@ -59,35 +59,43 @@ jobs:
     name: Deploy
     runs-on: [self-hosted, label-go2]
     steps:
-#      - uses: actions/checkout@v3
-#        with:
-#          sparse-checkout: |
-#            docker-compose_nginx.yml
-#            nginx/nginx.conf
-#          sparse-checkout-cone-mode: false
-#          clean: true
-
-      - name: Download setting files
-        uses: actions/download-artifact@v4
+      - uses: actions/checkout@v3
         with:
-          name: setting-files
-          path: .
+          sparse-checkout: |
+            docker-compose_nginx.yml
+            nginx/nginx.conf
+          sparse-checkout-cone-mode: false
+          clean: true
 
-      - name: docker login
+#      - name: Download setting files
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: setting-files
+#          path: .
+
+#      - name: docker login
         #run: docker login -u yangjay666 -p${{secrets.DOCKER_PASSWORD}}
         #plz plz
-        uses: docker/login-action@v1
-        with:
-          username: yangjay666
-          password: ${{secrets.DOCKER_PASSWORD}}
+#        uses: docker/login-action@v1
+#        with:
+#          username: yangjay666
+#          password: ${{secrets.DOCKER_PASSWORD}}
 
-      - name: pull docker image
-        run: docker pull yangjay666/devops_step2:v1.0
-      - name: run docker container
-        run: docker compose -f docker-compose_nginx.yml up -d
+#      - name: pull docker image
+#        run: docker pull yangjay666/devops_step2:v1.0
+#      - name: run docker container
+#        run: docker compose -f docker-compose_nginx.yml up -d
       
-      - name: check container status
-        run: docker ps -a
+#      - name: check container status
+#        run: docker ps -a
       
-      - name: cleanup old images
-        run: docker image prune -f
+#      - name: cleanup old images
+#        run: docker image prune -f
+
+
+      - name: 운영 서버로 파일 복사
+        run: |
+          cd devops-step2
+          scp ./docker-compose_nginx.yml aws-master:~
+          scp -r ./nginx/nginx.conf  aws-master:~
+          ssh aws-master ./run.sh > /dev/null 
