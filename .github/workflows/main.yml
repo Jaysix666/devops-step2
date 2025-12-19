@@ -1,3 +1,4 @@
+# 예제
 name: Spring boot docker image CI/CD
 
 on:
@@ -12,17 +13,17 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
 
-      - name: Setup JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+    #  - name: Setup JDK 17
+    #    uses: actions/setup-java@v3
+    #    with:
+    #      java-version: '17'
+    #      distribution: 'temurin'
 
       - name: gradlew 파일 실행 권한 설정
         run: chmod +x gradlew
