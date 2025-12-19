@@ -1,78 +1,28 @@
-name: Spring boot docker image CI/CD
+deploy:
+  name: Deploy
+  needs: build
+  runs-on: self-hosted
 
-on:
-  push:
-    branches:
-      - main
+  steps:
+    # Docker Hub 로그인
+    - name: Docker login
+      uses: docker/login-action@v2
+      with:
+        username: ${{ env.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
-env:
-  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    # Docker 이미지 pull
+    - name: Docker image pull
+      run: docker pull ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0
 
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+    # 기존 컨테이너 정리
+    - name: Stop & Remove container
+      run: |
+        docker stop devops_step2 || true
+        docker rm devops_step2 || true
 
-    steps:
-      # 소스 코드 체크아웃
-      - name: Checkout source
-        uses: actions/checkout@v3
-
-      # JDK 17 설정 (CI 서버용)
-      - name: Setup JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      # gradlew 실행 권한 부여
-      - name: gradlew 파일 실행 권한 설정
-        run: chmod +x gradlew
-
-      # 테스트
-      - name: Test with gradle
-        run: ./gradlew --info test
-
-      # Spring Boot jar 생성
-      - name: Spring boot 실행 파일 생성
-        run: ./gradlew bootJar
-
-      # Docker 이미지 빌드
-      - name: Docker image 생성
-        run: docker build -t ${{env.DOCKER_USERNAME}}/devops_step2:v1.0 .
-
-      # Docker Hub 로그인
-      - name: Docker login
-        uses: docker/login-action@v2
-        with:
-          username: ${{env.DOCKER_USERNAME}}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      # Docker Hub에 이미지 푸시
-      - name: Docker image 허브에 저장
-        run: docker push ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: self-hosted
-
-    steps:
-      # Docker Hub 로그인
-      - name: Docker login
-        uses: docker/login-action@v2
-        with:
-          username: ${{env.DOCKER_USERNAME}}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      # Docker 이미지 pull
-      - name: Docker image pull
-        run: docker pull ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
-
-      # (선택) 컨테이너 실행
-      - name: Docker container run
-        run: |
-          docker stop devops_step2 || true
-          docker rm devops_step2 || true
-          docker run -d --name devops_step2 -p 8080:8080 ${{env.DOCKER_USERNAME}}/devops_step2:v1.0
+    # docker compose 실행 (경로 + 명령어 한 step에서)
+    - name: Docker compose up
+      run: |
+        cd /home/kosa/devops-step2
+        docker compose -f docker-compose_nginx.yml up -d
