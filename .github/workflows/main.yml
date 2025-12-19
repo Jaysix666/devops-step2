@@ -53,6 +53,13 @@ jobs:
       - name: Docker image 허브에 저장
         run: docker push ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0
 
+      - name: 파일 업로드
+        uses: actions/upload-artifact@v4
+        with:
+        name: my-artifact
+        path: docker-compose_nginx.yml
+        
+
   deploy:
     name: Deploy
     needs: build
@@ -60,14 +67,20 @@ jobs:
 
     steps:
       # yml 파일만 체크아웃
-      - name: Copy yml file from src
-        uses: actions/checkout@v3
+      #- name: Copy yml file from src
+      #  uses: actions/checkout@v3
+      #  with:
+      #    sparse-checkout: |
+      #      docker-compose_nginx.yml
+      #      nginx/nginx.conf
+      #    sparse-checkout-cone-mode: false
+      #    clean: true
+      
+      - name: 파일 다운로드
+        uses: actions/download-artifact@v4
         with:
-          sparse-checkout: |
-            docker-compose_nginx.yml
-            nginx/nginx.conf
-          sparse-checkout-cone-mode: false
-          clean: true
+          name: my-artifact
+          path: ./docker-compose_nginx.yml
 
       # Docker Hub 로그인
       - name: Docker login
