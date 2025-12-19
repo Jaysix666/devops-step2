@@ -31,16 +31,24 @@ jobs:
       #     distribution: 'temurin'
 
       - name: gradlew 파일 실행 권한 설정
-        run: chmod +x devops-step2/gradlew
+        run: |
+          cd devops-step2
+          chmod +x gradlew
 
       - name: Test with gradle
-        run: ./devops-step2/gradlew --info test
+        run: |
+          cd devops-step2
+          ./gradlew --info test
 
       - name: Spring boot 실행 파일 생성
-        run: ./devops-step2/gradlew bootJar
+        run: |
+          cd devops-step2
+          ./gradlew bootJar
 
       - name: Docker image 생성
-        run: docker build -t ${{ env.DOCKER_USERNAME }}/devops_step2:latest ./devops-step2
+        run: |
+          cd devops-step2
+          docker build -t ${{ env.DOCKER_USERNAME }}/devops_step2:latest .
 
       - name: Docker login
         uses: docker/login-action@v2
