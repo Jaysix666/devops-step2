@@ -8,7 +8,6 @@ on:
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  IMAGE_NAME: devops_step2
 
 jobs:
   build:
@@ -34,24 +33,23 @@ jobs:
       - name: Spring boot 실행 파일 생성
         run: ./gradlew bootJar
 
-      - name: Docker Hub 로그인
+      - name: Docker image 생성
+        run: docker build -t ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0 .
+
+      - name: Docker login
         uses: docker/login-action@v2
         with:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
 
-      - name: Docker image 빌드 및 푸시
-        run: |
-          docker build -t ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest .
-          docker push ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+      - name: Docker image 허브에 저장
+        run: docker push ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0
 
-      - name: 설정 파일 업로드
+      - name: 파일 업로드
         uses: actions/upload-artifact@v4
         with:
-          name: deployment-files
-          path: |
-            docker-compose_nginx.yml
-            nginx/nginx.conf
+          name: my-artifact
+          path: docker-compose_nginx.yml
 
   deploy:
     name: Deploy
@@ -59,27 +57,23 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: 설정 파일 다운로드
+      - name: 파일 다운로드
         uses: actions/download-artifact@v4
         with:
-          name: deployment-files
-          path: ./deploy-config
+          name: my-artifact
+          path: .
 
-      - name: Docker Hub 로그인
+      - name: Docker login
         uses: docker/login-action@v2
         with:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ env.DOCKER_PASSWORD }}
 
       - name: Docker image pull
-        run: docker pull ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+        run: docker pull ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0
 
-      - name: Docker 컨테이너 재실행
+      - name: Docker container run
         run: |
-          docker stop ${{ env.IMAGE_NAME }} || true
-          docker rm ${{ env.IMAGE_NAME }} || true
-          docker run -d \
-            --name ${{ env.IMAGE_NAME }} \
-            -p 8080:8080 \
-            --restart always \
-            ${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          docker stop devops_step2 || true
+          docker rm devops_step2 || true
+          docker run -d --name devops_step2 -p 8080:8080 ${{ env.DOCKER_USERNAME }}/devops_step2:v1.0
