@@ -97,4 +97,4 @@ jobs:
         run: |
           scp ./docker-compose_nginx.yml aws-master:~
           scp -r ./nginx/nginx.conf  aws-master:~/nginx/nginx.conf
-          ssh aws-master ./run.sh > /dev                                                                                                                                                                                                                                                                                                                                                               /null 
+          ssh aws-master ./run.sh > /dev/null                                                                                                                                                                                                                                                                                                                                                               /null 
